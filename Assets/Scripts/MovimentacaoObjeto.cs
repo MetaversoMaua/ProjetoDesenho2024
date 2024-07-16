@@ -2,29 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoverCamera : MonoBehaviour
+public class MoverObjeto : MonoBehaviour
 {
-    float rotationX = 0f;
-    float rotationY = 0f;
-    public float sensitivity = 15f;
-
-    public Transform personagem;
-    public Vector3 offset;
-    void Start()
+    public float velocidade = 100000000000000000f; 
+        void Update()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
- 
-    void Update()
-    {
-        rotationY += Input.GetAxis("Mouse X") * sensitivity;
-        rotationX += Input.GetAxis("Mouse Y") * -1 * sensitivity;
-        transform.localEulerAngles = new Vector3(rotationX,rotationY,0);
-    }
+        // Leitura da entrada do teclado
+        float horizontal = Input.GetAxis("Horizontal"); // A/D ou setas esquerda/direita
+        float vertical = Input.GetAxis("Vertical"); // W/S ou setas cima/baixo
 
-    void LateUpdate(){
-        Vector3 posDesejada = personagem.position + offset;
-        transform.position = posDesejada;
+        // Calcular a direção do movimento
+        Vector3 movimento = new Vector3(horizontal, 0, vertical);
+
+        // Aplicar o movimento ao objeto com velocidade e deltaTime
+        transform.Translate(movimento * velocidade * Time.deltaTime);
     }
 }
