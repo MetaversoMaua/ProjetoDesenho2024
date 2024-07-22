@@ -33,12 +33,12 @@ public class OrtogonalView : MonoBehaviour
     void SetTopDownView()
     {
         transform.rotation = Quaternion.Euler(90f, 0f, 0f);
-        transform.position = position + new Vector3(0, distance, 0);
+        transform.position = position + new Vector3(-0.5f, distance, 0.8f);
     }
 
     void SetSideView()
     {
         transform.rotation = Quaternion.Euler(0f, 90f, 0f);
-        transform.position = position + new Vector3(-distance, 0, 0);
+        transform.position = position + new Vector3(-distance, 1, 1);
     }
 }
