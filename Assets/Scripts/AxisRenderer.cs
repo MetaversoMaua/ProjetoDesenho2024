@@ -6,16 +6,19 @@ using UnityEngine.Events;
 public class AxisRenderer : MonoBehaviour
 {
     public float lineLength = 150.0f; // Length of the axis lines
-    public UnityEvent onLineRendererCreated = new UnityEvent();
-    void Awake()
+    public UnityEvent<GameObject[]> LineRendererCreatedEvent = new UnityEvent<GameObject[]>();
+    private GameObject x_axis;
+    private GameObject y_axis;
+    private GameObject z_axis;
+    void Start()
     {
-        CreateAxisLine("XAxis", Color.red, Vector3.right);
-        CreateAxisLine("YAxis", Color.green, Vector3.up);
-        CreateAxisLine("ZAxis", Color.blue, Vector3.forward);
-        onLineRendererCreated.Invoke();
+        x_axis = CreateAxisLine("XAxis", Color.red, Vector3.right);
+        y_axis = CreateAxisLine("YAxis", Color.green, Vector3.up);
+        z_axis = CreateAxisLine("ZAxis", Color.blue, Vector3.forward);
+        LineRendererCreatedEvent.Invoke(new GameObject[] { x_axis, y_axis, z_axis });
     }
 
-    void CreateAxisLine(string name, Color color, Vector3 direction)
+    GameObject CreateAxisLine(string name, Color color, Vector3 direction)
     {
         GameObject axisLine = new GameObject(name);
         axisLine.transform.parent = transform;
@@ -32,5 +35,6 @@ public class AxisRenderer : MonoBehaviour
         
         lineRenderer.SetPosition(0, - direction * lineLength / 2);
         lineRenderer.SetPosition(1, direction * lineLength / 2);
+        return axisLine;
     }
 }
