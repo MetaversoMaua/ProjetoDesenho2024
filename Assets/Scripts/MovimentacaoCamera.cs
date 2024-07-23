@@ -1,30 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class MoverCamera : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    float rotationX = 0f;
-    float rotationY = 0f;
-    public float sensitivity = 15f;
+    public float speed = 5f;                // Velocidade de movimento
+    public float mouseSensitivity = 100f;   // Sensibilidade do mouse
+    public Transform cameraTransform;       // Transform da câmera principal
 
-    public Transform personagem;
-    public Vector3 offset;
+    private CharacterController controller;
+
     void Start()
     {
+        controller = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
- 
-    void Update()
-    {
-        rotationY += Input.GetAxis("Mouse X") * sensitivity;
-        rotationX += Input.GetAxis("Mouse Y") * -1 * sensitivity;
-        transform.localEulerAngles = new Vector3(rotationX,rotationY,0);
     }
 
-    void LateUpdate(){
-        Vector3 posDesejada = personagem.position + offset;
-        transform.position = posDesejada;
+    void Update()
+    {
+        // Captura a entrada do teclado
+        float move = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+        float strafe = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+
+        Vector3 moveDirection = transform.forward * move + transform.right * strafe;
+        controller.Move(moveDirection);
+
+        // Rotação do personagem
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        transform.Rotate(Vector3.up * mouseX);
+
+        // Rotação da câmera
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        cameraTransform.Rotate(Vector3.left * mouseY);
     }
 }
