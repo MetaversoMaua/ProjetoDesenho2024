@@ -34,6 +34,12 @@ public class FaceRenderer : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        Toggle(obj);
+        ToggleTexture(face);
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.H)) Toggle(obj);
