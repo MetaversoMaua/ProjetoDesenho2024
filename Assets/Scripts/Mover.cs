@@ -22,21 +22,21 @@ public class Mover : MonoBehaviour
         movimentar();
     }
 
-    // void OnCollisionEnter(Collision collision)
-    // {
-    //     if (collision.gameObject.CompareTag("Chao"))
-    //     {
-    //         podePular = true;
-    //     }
-    // }
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Chao"))
+        {
+            podePular = true;
+        }
+    }
 
-    // void OnCollisionExit(Collision collision)
-    // {
-    //     if (collision.gameObject.CompareTag("Chao"))
-    //     {
-    //         podePular = false;
-    //     }
-    // }
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Chao"))
+        {
+            podePular = false;
+        }
+    }
 
     void movimentar(){
         float moveX = 0;
@@ -53,7 +53,7 @@ public class Mover : MonoBehaviour
 
         transform.position += movimentoRotacionado * vel;
 
-        // if (Input.GetKey(KeyCode.Space) && podePular) corpo.AddForce(Vector3.up * forcaPulo);
+        if (Input.GetKey(KeyCode.Space) && podePular) corpo.AddForce(Vector3.up * forcaPulo);
     }
 
     void rotaciona(){

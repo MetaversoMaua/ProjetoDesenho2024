@@ -5,48 +5,56 @@ using UnityEngine.UI;
 
 public class FaceRenderer : MonoBehaviour
 {
-    public GameObject obj;
-    public GameObject face;
-    private bool isVisible = true;
-    private bool textureIsVisible = true;
-    public RawImage img;
+    public GameObject full;
+    public GameObject normal;
+    public GameObject faces;
 
-    public Texture textureS;
-    public Texture textureT;
-    public Texture textureF;
+    private bool full_bool = true;
+    private bool normal_bool = true;
+    private bool faces_bool = true;
 
-    private void Toggle(GameObject gameObject)
+
+    private void ToggleFull()
     {
-        isVisible = !isVisible;
-        gameObject.SetActive(isVisible);
+        full_bool = !full_bool;
+        full.SetActive(full_bool);
     }
-
-    private void ToggleTexture(GameObject gameObject){
-        textureIsVisible = !textureIsVisible;
-        gameObject.SetActive(textureIsVisible);
-    }
-
-    private void ChangeTexture(Texture newTexture)
+     private void ToggleNormal()
     {
-        if (img != null && newTexture != null)
-        {
-            img.texture = newTexture;
-        }
+        normal_bool = !normal_bool;
+        normal.SetActive(normal_bool);
+    }
+     private void ToggleFaces()
+    {
+        faces_bool = !faces_bool;
+        faces.SetActive(faces_bool);
     }
 
     void Start()
     {
-        Toggle(obj);
-        ToggleTexture(face);
+        ToggleFull();
+        ToggleFaces(); 
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H)) Toggle(obj);
-        if (Input.GetKeyDown(KeyCode.F)) ChangeTexture(textureF);
-        if (Input.GetKeyDown(KeyCode.T)) ChangeTexture(textureT);
-        if (Input.GetKeyDown(KeyCode.S)) ChangeTexture(textureS);
-
-        if (Input.GetKeyDown(KeyCode.D)) ToggleTexture(face);
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            if (normal_bool)
+            {
+                ToggleFull();
+                ToggleNormal();
+            }
+            else if (full_bool)
+            {
+                ToggleFull();
+                ToggleFaces();
+            }
+            else
+            {
+                ToggleFaces();
+                ToggleNormal();
+            }
+        }
     }
 }
