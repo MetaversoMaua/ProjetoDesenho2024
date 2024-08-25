@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2189,7 +2189,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cac079fe771eb6b428cd1efddf768d2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1212226666}
   m_SourcePrefab: {fileID: 100100000, guid: cac079fe771eb6b428cd1efddf768d2a, type: 3}
 --- !u!1001 &228845365
 PrefabInstance:
@@ -12500,6 +12504,23 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 227704912}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1212226666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212226664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad04d28e312445644970c4c520147cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineLength: 1.5
+  lineWidth: 0.01
+  LineRendererCreatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1249069354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17124,7 +17145,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -17517,6 +17538,8 @@ GameObject:
   - component: {fileID: 1942521118}
   - component: {fileID: 1942521117}
   - component: {fileID: 1942521116}
+  - component: {fileID: 1942521120}
+  - component: {fileID: 1942521119}
   m_Layer: 0
   m_Name: N1
   m_TagString: Untagged
@@ -17590,6 +17613,55 @@ Transform:
   - {fileID: 1212226665}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1942521119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942521115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f1b0100f530944418d1a8cb88fd88a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  N1: {fileID: 1942521115}
+  N2: {fileID: 0}
+  N3: {fileID: 0}
+  SelectN1Event:
+    m_PersistentCalls:
+      m_Calls: []
+  SelectN2Event:
+    m_PersistentCalls:
+      m_Calls: []
+  SelectN3Event:
+    m_PersistentCalls:
+      m_Calls: []
+  ToggleXAxisEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  ToggleYAxisEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  ToggleZAxisEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1942521120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942521115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10d2442ccee5f2b44afd37b616edd6d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axisRenderer: {fileID: 1212226666}
+  x_axis: {fileID: 0}
+  y_axis: {fileID: 0}
+  z_axis: {fileID: 0}
 --- !u!1 &1944610476
 GameObject:
   m_ObjectHideFlags: 0
