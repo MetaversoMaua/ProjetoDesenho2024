@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class AxisRenderer : MonoBehaviour
 {
     public float lineLength = 150.0f; // Length of the axis lines
+    public float lineWidth = 1.0f; // Width of the axis lines
     public UnityEvent<GameObject[]> LineRendererCreatedEvent = new UnityEvent<GameObject[]>();
     private GameObject x_axis;
     private GameObject y_axis;
@@ -29,12 +30,13 @@ public class AxisRenderer : MonoBehaviour
         lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
         lineRenderer.startColor = color;
         lineRenderer.endColor = color;
-        lineRenderer.startWidth = 1.0f;
-        lineRenderer.endWidth = 1.0f;
+        lineRenderer.startWidth = lineWidth;
+        lineRenderer.endWidth = lineWidth;
         lineRenderer.positionCount = 2;
         
         lineRenderer.SetPosition(0, - direction * lineLength / 2);
         lineRenderer.SetPosition(1, direction * lineLength / 2);
+        axisLine.transform.SetParent(this.transform.parent);
         return axisLine;
     }
 }
