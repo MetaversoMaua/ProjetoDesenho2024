@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 390d9f16c281d77408165d295375a4ef
+guid: 0e7c88172ef0d6046b314075ad3f8fdf
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -8,32 +8,32 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: N1_Frontal_Final
-    second: {fileID: 2100000, guid: 061e848171a1eba4a9f53dbbd03daf70, type: 2}
+    second: {fileID: 2100000, guid: 1207d48e9bcfa1b49b9656ed868afd44, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: N1_Inferior_Final
-    second: {fileID: 2100000, guid: 255c9e0c479c76143982b68cb478f509, type: 2}
+    second: {fileID: 2100000, guid: 5013ef3858a56c94ba40736237b96667, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: N1_Lateral_Direita_Final
-    second: {fileID: 2100000, guid: 87952e68616db6e428da0748cc279abc, type: 2}
+      name: N1_LD_arrumado_Final
+    second: {fileID: 2100000, guid: 34261db91e287c346949ebf653fbc855, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: N1_Lateral_Esquerda_Final
-    second: {fileID: 2100000, guid: c2388c2aab29af94584d3d0fb24b3de0, type: 2}
+      name: N1_LE_arrumado_Final
+    second: {fileID: 2100000, guid: 2a3a22a2184e08d4887a420edd82b997, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: N1_Superior_Final
-    second: {fileID: 2100000, guid: c4546d6cf75723745a3cd8dd1cd50f00, type: 2}
+    second: {fileID: 2100000, guid: bc41b7b70088b97429e71b1d45c64c31, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: N1_Traseira_Final
-    second: {fileID: 2100000, guid: 89fbaa587f96c1d48b3e9507b228c552, type: 2}
+    second: {fileID: 2100000, guid: ea59b8987dcaacf42977136856682195, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AxisToggler : MonoBehaviour
 {
-    [SerializeField] AxisRenderer axisRenderer;
+    private AxisRenderer axisRenderer;
     public GameObject x_axis;
     public GameObject y_axis;
     public GameObject z_axis;
@@ -40,25 +40,10 @@ public class AxisToggler : MonoBehaviour
 
     private void Awake()
     {
+        axisRenderer = GetComponent<AxisRenderer>();
         axisRenderer.LineRendererCreatedEvent.AddListener(OnLineRendererCreated);
         UIController.instance.ToggleXAxisEvent.AddListener(OnXAxisToggle);
         UIController.instance.ToggleYAxisEvent.AddListener(OnYAxisToggle);
         UIController.instance.ToggleZAxisEvent.AddListener(OnZAxisToggle);
-    }
-
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.X))
-        {
-            OnXAxisToggle();
-        }
-        if(Input.GetKeyDown(KeyCode.Y))
-        {
-            OnYAxisToggle();
-        }
-        if(Input.GetKeyDown(KeyCode.Z))
-        {
-            OnZAxisToggle();
-        }
     }
 }
