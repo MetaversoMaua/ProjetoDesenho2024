@@ -36,7 +36,7 @@ public class ImageSwitcher : MonoBehaviour
         }
     }
 
-    void SwitchImageAndText()
+    public void SwitchImageAndText()
     {
         images[currentIndex].gameObject.SetActive(false); // Desativar a imagem atual
         texts[currentIndex].gameObject.SetActive(false); // Desativar o texto atual

@@ -40,6 +40,21 @@ public class AxisRenderer : MonoBehaviour
     {
         axis.SetActive(!axis.activeSelf);
     }
+    
+    public void ToggleXAxis()
+    {
+        ToggleAxis(x_axis);
+    }
+    
+    public void ToggleYAxis()
+    {
+        ToggleAxis(y_axis);
+    }
+    
+    public void ToggleZAxis()
+    {
+        ToggleAxis(z_axis);
+    }
 
     GameObject CreateAxisLine(string name, Color color, Vector3 direction)
     {

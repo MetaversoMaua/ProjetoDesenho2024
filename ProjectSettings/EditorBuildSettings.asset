@@ -6,6 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Sala.unity
+    guid: 1998e1b089244c94b901e1401984f902
+  - enabled: 0
     path: Assets/Scenes/FaceTesting.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  m_configObjects: {}
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 855ad4c506b0e2c4bb8d0e5d39730975,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 947e1b3d193ec5d46832373ea276146f,
+      type: 2}

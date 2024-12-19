@@ -40,21 +40,26 @@ public class FaceRenderer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
-            if (normal_bool)
-            {
-                ToggleFull();
-                ToggleNormal();
-            }
-            else if (full_bool)
-            {
-                ToggleFull();
-                ToggleFaces();
-            }
-            else
-            {
-                ToggleFaces();
-                ToggleNormal();
-            }
+            ForcedUpdate();
+        }
+    }
+
+    public void ForcedUpdate()
+    {
+        if (normal_bool)
+        {
+            ToggleFull();
+            ToggleNormal();
+        }
+        else if (full_bool)
+        {
+            ToggleFull();
+            ToggleFaces();
+        }
+        else
+        {
+            ToggleFaces();
+            ToggleNormal();
         }
     }
 }
